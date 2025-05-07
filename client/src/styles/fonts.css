@@ -1,0 +1,33 @@
+/* src/styles/fonts.css */
+@font-face {
+  font-family: "IntegralCF";
+  src: url("/fonts/integralcf-bold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SatoshiRegular";
+  src: url("/fonts/Satoshi-Regular.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SatoshiBold";
+  src: url("/fonts/Satoshi-Bold.woff2") format("woff2");
+  font-style: normal;
+  font-display: swap;
+}
+
+@import "tailwindcss";
+
+@theme {
+  --font-primary: "IntegralCF", system-ui, sans-serif;
+  --font-secondary: "SatoshiRegular", ui-serif, serif;
+  --font-tertiary: "SatoshiBold", ui-serif, serif;
+}
+
+* {
+  font-family: var(--font-secondary);
+}
