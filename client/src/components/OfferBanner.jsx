@@ -1,8 +1,10 @@
-import { XMarkIcon } from "@heroicons/react/24/outline";
 import React from "react";
 import { Link } from "react-router-dom";
 
 const OfferBanner = () => {
+  
+  // If user exist and successfully sign up offer banner not to show...
+
   return (
     <div className="bg-black">
       <div className="container mx-auto text-white p-2 flex items-center w-full">
@@ -12,9 +14,6 @@ const OfferBanner = () => {
             Sign Up Now
           </Link>
         </span>
-        <button className="cursor-pointer">
-          <XMarkIcon className="size-4" />
-        </button>
       </div>
     </div>
   );
