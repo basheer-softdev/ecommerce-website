@@ -6,17 +6,19 @@ import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 import Testimonials from "../components/Testimonials";
 import TopSelling from "../components/TopSelling";
+import HoverImage from "../components/HoverImage";
 
 const Home = () => {
   return (
     <div>
       <Hero />
-      {/* <Brands />
+      <Brands />
       <NewArrivals />
       <TopSelling />
       <Testimonials />
       <Newsletter />
-      <Footer /> */}
+      <Footer />
+      {/* <HoverImage /> */}
     </div>
   );
 };
