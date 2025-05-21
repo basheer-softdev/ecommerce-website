@@ -26,11 +26,13 @@ import {
   ChevronDownIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/20/solid";
-import Dashboard from "../pages/admin/Dashboard";
-import Reports from "../pages/admin/Reports";
-import Customers from "../pages/admin/Customers";
-import Products from "../pages/admin/Products";
-import Orders from "../pages/admin/Orders";
+import { lazy, Suspense } from "react";
+
+const Dashboard = lazy(() => import("../pages/admin/Dashboard"));
+const Orders = lazy(() => import("../pages/admin/Orders"));
+const Products = lazy(() => import("../pages/admin/Products"));
+const Customers = lazy(() => import("../pages/admin/Customers"));
+const Reports = lazy(() => import("../pages/admin/Reports"));
 
 const navigation = [
   { name: "Dashboard", icon: HomeIcon, href: "#" },
@@ -291,7 +293,11 @@ const AdminLayout = () => {
           </div>
 
           <main className="py-10">
-            <div className="px-4 sm:px-6 lg:px-8">{<ActivePage />}</div>
+            <div className="px-4 sm:px-6 lg:px-8">
+              <Suspense fallback={<div>Loading…</div>}>
+                <ActivePage />
+              </Suspense>
+            </div>
           </main>
         </div>
       </div>
