@@ -81,7 +81,7 @@ const AdminLayout = () => {
           <div className="fixed inset-0 flex">
             <DialogPanel
               transition
-              className="relative mr-16 flex w-full max-w-xs flex-1 transform transition duration-300 ease-in-out data-closed:-translate-x-full"
+              className="relative mr-16 flex w-full max-w-72 flex-1 transform transition duration-300 ease-in-out data-closed:-translate-x-full"
             >
               <TransitionChild>
                 <div className="absolute top-0 left-full flex w-16 justify-center pt-5 duration-300 ease-in-out data-closed:opacity-0">
@@ -99,36 +99,32 @@ const AdminLayout = () => {
                 </div>
               </TransitionChild>
               {/* Sidebar component, swap this element with another sidebar if you like */}
-              <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4 ring-1 ring-white/10">
+              <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-black px-6 pb-4 ring-1 ring-white/10">
                 <div className="flex h-16 shrink-0 items-center">
-                  <img
-                    alt="Your Company"
-                    src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
-                    className="h-8 w-auto"
-                  />
+                  <span className="text-3xl uppercase !font-primary text-white">
+                    Shop.co
+                  </span>
                 </div>
                 <nav className="flex flex-1 flex-col">
                   <ul role="list" className="flex flex-1 flex-col gap-y-7">
                     <li>
                       <ul role="list" className="-mx-2 space-y-1">
                         {navigation.map((item) => (
-                          <li key={item.name}>
-                            <a
-                              href={item.href}
-                              onClick={() => setActiveTab(item.name)}
-                              className={classNames(
-                                activeTab === item.name
-                                  ? "bg-gray-800 text-white"
-                                  : "text-gray-400 hover:bg-gray-800 hover:text-white",
-                                "group flex gap-x-3 rounded-md p-2 text-sm/6 font-semibold"
-                              )}
-                            >
-                              <item.icon
-                                aria-hidden="true"
-                                className="size-6 shrink-0"
-                              />
-                              {item.name}
-                            </a>
+                          <li
+                            key={item.name}
+                            onClick={() => setActiveTab(item.name)}
+                            className={classNames(
+                              activeTab === item.name
+                                ? "text-white"
+                                : "text-white/60 hover:text-white",
+                              "group flex gap-x-3 py-2.5 px-2 text-md/6 cursor-pointer"
+                            )}
+                          >
+                            <item.icon
+                              aria-hidden="true"
+                              className="size-6 shrink-0"
+                            />
+                            {item.name}
                           </li>
                         ))}
                       </ul>
@@ -166,23 +162,21 @@ const AdminLayout = () => {
                 <li>
                   <ul role="list" className="-mx-2 space-y-1">
                     {navigation.map((item) => (
-                      <li key={item.name}>
-                        <a
-                          href={item.href}
-                          onClick={() => setActiveTab(item.name)}
-                          className={classNames(
-                            activeTab === item.name
-                              ? "text-white"
-                              : "text-white/60 hover:text-white",
-                            "group flex gap-x-3 py-2.5 px-2 text-md/6"
-                          )}
-                        >
-                          <item.icon
-                            aria-hidden="true"
-                            className="size-6 shrink-0"
-                          />
-                          {item.name}
-                        </a>
+                      <li
+                        key={item.name}
+                        onClick={() => setActiveTab(item.name)}
+                        className={classNames(
+                          activeTab === item.name
+                            ? "text-white"
+                            : "text-white/60 hover:text-white",
+                          "group flex gap-x-3 py-2.5 px-2 text-md/6 cursor-pointer"
+                        )}
+                      >
+                        <item.icon
+                          aria-hidden="true"
+                          className="size-6 shrink-0"
+                        />
+                        {item.name}
                       </li>
                     ))}
                   </ul>
@@ -274,13 +268,13 @@ const AdminLayout = () => {
                   </MenuButton>
                   <MenuItems
                     transition
-                    className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-md bg-white py-2 shadow-lg ring-1 ring-gray-900/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
+                    className="absolute right-0 z-10 mt-2.5 w-32 origin-top-right rounded-sm bg-white py-2 shadow-lg ring-1 ring-gray-900/5 transition focus:outline-hidden data-closed:scale-95 data-closed:transform data-closed:opacity-0 data-enter:duration-100 data-enter:ease-out data-leave:duration-75 data-leave:ease-in"
                   >
                     {userNavigation.map((item) => (
                       <MenuItem key={item.name}>
                         <a
                           href={item.href}
-                          className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-gray-50 data-focus:outline-hidden"
+                          className="block px-3 py-1 text-sm/6 text-gray-900 data-focus:bg-black/10 data-focus:outline-hidden"
                         >
                           {item.name}
                         </a>
